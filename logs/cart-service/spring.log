@@ -1,0 +1,22 @@
+17:04:58:260  INFO 9524 --- [main] com.hmall.cart.CartApplication           : Starting CartApplication using Java 20.0.2 on LAPTOP-33Q7328Q with PID 9524 (D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes started by Lenovo in D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+17:04:58:264 DEBUG 9524 --- [main] com.hmall.cart.CartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+17:04:58:265  INFO 9524 --- [main] com.hmall.cart.CartApplication           : The following 1 profile is active: "local"
+17:04:59:554  INFO 9524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7001 (http)
+17:04:59:565  INFO 9524 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:04:59:566  INFO 9524 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+17:04:59:670  INFO 9524 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:04:59:670  INFO 9524 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1341 ms
+17:05:00:604  INFO 9524 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+17:05:00:705  INFO 9524 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7001 (http) with context path ''
+17:05:00:706  INFO 9524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+17:05:00:709  INFO 9524 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+17:05:00:739  INFO 9524 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+17:05:00:859  INFO 9524 --- [main] com.hmall.cart.CartApplication           : Started CartApplication in 3.083 seconds (JVM running for 3.904)
+17:05:21:789  INFO 9524 --- [http-nio-7001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+17:05:21:789  INFO 9524 --- [http-nio-7001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+17:05:21:793  INFO 9524 --- [http-nio-7001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+17:05:36:512  INFO 9524 --- [http-nio-7001-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+17:05:36:928  INFO 9524 --- [http-nio-7001-exec-9] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+17:05:36:936 DEBUG 9524 --- [http-nio-7001-exec-9] c.h.cart.mapper.CartMapper.selectList    : ==>  Preparing: SELECT id,user_id,item_id,num,name,spec,price,image,create_time,update_time FROM cart WHERE (user_id = ?)
+17:05:36:965 DEBUG 9524 --- [http-nio-7001-exec-9] c.h.cart.mapper.CartMapper.selectList    : ==> Parameters: 1(Long)
+17:05:36:999 DEBUG 9524 --- [http-nio-7001-exec-9] c.h.cart.mapper.CartMapper.selectList    : <==      Total: 1
