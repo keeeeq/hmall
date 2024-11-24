@@ -3,6 +3,8 @@ package com.hmall.cart.service.impl;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.hmall.api.client.ItemClient;
+import com.hmall.api.dto.ItemDTO;
 import com.hmall.cart.domain.dto.CartFormDTO;
 import com.hmall.cart.domain.po.Cart;
 import com.hmall.cart.domain.vo.CartVO;
@@ -17,6 +19,10 @@ import org.springframework.stereotype.Service;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -31,6 +37,9 @@ import java.util.List;
 public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements ICartService {
 
 //    private final IItemService itemService;
+//    private RestTemplate restTemplate;
+////    private DiscoveryClient discoveryClient;
+    private final ItemClient itemClient;
 
     @Override
     public void addItem2Cart(CartFormDTO cartFormDTO) {
@@ -73,7 +82,7 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
         return vos;
     }
 
-    private void handleCartItems(List<CartVO> vos) {
+//    private void handleCartItems(List<CartVO> vos) {
 //        // 1.获取商品id
 //        Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
 //        // 2.查询商品
@@ -93,6 +102,27 @@ public class CartServiceImpl extends ServiceImpl<CartMapper, Cart> implements IC
 //            v.setStatus(item.getStatus());
 //            v.setStock(item.getStock());
 //        }
+//    }
+
+    private void handleCartItems(List<CartVO> vos) {
+        // TODO 1.获取商品id
+        Set<Long> itemIds = vos.stream().map(CartVO::getItemId).collect(Collectors.toSet());
+        List<ItemDTO> items= itemClient.queryItemByIds(itemIds);
+        if (CollUtils.isEmpty(items)) {
+            return;
+        }
+        // 3.转为 id 到 item的map
+        Map<Long, ItemDTO> itemMap = items.stream().collect(Collectors.toMap(ItemDTO::getId, Function.identity()));
+        // 4.写入vo
+        for (CartVO v : vos) {
+            ItemDTO item = itemMap.get(v.getItemId());
+            if (item == null) {
+                continue;
+            }
+            v.setNewPrice(item.getPrice());
+            v.setStatus(item.getStatus());
+            v.setStock(item.getStock());
+        }
     }
 
     @Override
