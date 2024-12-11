@@ -1,85 +1,40 @@
-16:52:54:567  INFO 13604 --- [main] com.hmall.cart.CartApplication           : Starting CartApplication using Java 20.0.2 on LAPTOP-33Q7328Q with PID 13604 (D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes started by Lenovo in D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall)
-16:52:54:574 DEBUG 13604 --- [main] com.hmall.cart.CartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
-16:52:54:575  INFO 13604 --- [main] com.hmall.cart.CartApplication           : The following 1 profile is active: "local"
-16:52:55:494  INFO 13604 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=fc15b0cd-e9fc-358f-8b37-99dcae587de9
-16:52:55:924  INFO 13604 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7001 (http)
-16:52:55:934  INFO 13604 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-16:52:55:934  INFO 13604 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
-16:52:56:061  INFO 13604 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-16:52:56:062  INFO 13604 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1426 ms
-16:52:56:233  INFO 13604 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'item-service' URL not provided. Will try picking an instance via load-balancing.
-16:52:56:581  WARN 13604 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartMapper' defined in file [D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: com/baomidou/mybatisplus/annotation/SqlParser
-16:52:56:586  INFO 13604 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-16:52:56:597  INFO 13604 --- [main] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-16:52:56:619 ERROR 13604 --- [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartController' defined in file [D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes\com\hmall\cart\controller\CartController.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartMapper' defined in file [D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: com/baomidou/mybatisplus/annotation/SqlParser
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:955) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:920) ~[spring-context-5.3.27.jar:5.3.27]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:583) ~[spring-context-5.3.27.jar:5.3.27]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:147) ~[spring-boot-2.7.12.jar:2.7.12]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12.jar:2.7.12]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12.jar:2.7.12]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12.jar:2.7.12]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12.jar:2.7.12]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12.jar:2.7.12]
-	at com.hmall.cart.CartApplication.main(CartApplication.java:14) ~[classes/:na]
-Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartServiceImpl': Unsatisfied dependency expressed through field 'baseMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartMapper' defined in file [D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: com/baomidou/mybatisplus/annotation/SqlParser
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:660) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:640) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-5.3.27.jar:5.3.27]
-	... 19 common frames omitted
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartMapper' defined in file [D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes\com\hmall\cart\mapper\CartMapper.class]: Invocation of init method failed; nested exception is java.lang.NoClassDefFoundError: com/baomidou/mybatisplus/annotation/SqlParser
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1804) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:620) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1391) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1311) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:657) ~[spring-beans-5.3.27.jar:5.3.27]
-	... 34 common frames omitted
-Caused by: java.lang.NoClassDefFoundError: com/baomidou/mybatisplus/annotation/SqlParser
-	at com.baomidou.mybatisplus.core.parser.SqlParserHelper.initSqlParserInfoCache(SqlParserHelper.java:63) ~[mybatis-plus-core-3.4.2.jar:3.4.2]
-	at com.baomidou.mybatisplus.core.MybatisMapperAnnotationBuilder.parse(MybatisMapperAnnotationBuilder.java:112) ~[mybatis-plus-core-3.4.2.jar:3.4.2]
-	at com.baomidou.mybatisplus.core.MybatisMapperRegistry.addMapper(MybatisMapperRegistry.java:83) ~[mybatis-plus-core-3.4.2.jar:3.4.2]
-	at com.baomidou.mybatisplus.core.MybatisConfiguration.addMapper(MybatisConfiguration.java:152) ~[mybatis-plus-core-3.4.2.jar:3.4.2]
-	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-2.0.5.jar:2.0.5]
-	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1863) ~[spring-beans-5.3.27.jar:5.3.27]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1800) ~[spring-beans-5.3.27.jar:5.3.27]
-	... 44 common frames omitted
-Caused by: java.lang.ClassNotFoundException: com.baomidou.mybatisplus.annotation.SqlParser
-	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641) ~[na:na]
-	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188) ~[na:na]
-	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
-	... 52 common frames omitted
-
+14:29:17:494  INFO 19004 --- [main] com.hmall.cart.CartApplication           : Starting CartApplication using Java 20.0.2 on LAPTOP-33Q7328Q with PID 19004 (D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\cart-service\target\classes started by Lenovo in D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall)
+14:29:17:503 DEBUG 19004 --- [main] com.hmall.cart.CartApplication           : Running with Spring Boot v2.7.12, Spring v5.3.27
+14:29:17:504  INFO 19004 --- [main] com.hmall.cart.CartApplication           : The following 1 profile is active: "local"
+14:29:19:720  INFO 19004 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=8dbba48e-73cd-38bd-b409-a12f68f5314a
+14:29:20:866  INFO 19004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 7001 (http)
+14:29:20:899  INFO 19004 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+14:29:20:900  INFO 19004 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.75]
+14:29:21:214  INFO 19004 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+14:29:21:215  INFO 19004 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3593 ms
+14:29:21:577  INFO 19004 --- [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'item-service' URL not provided. Will try picking an instance via load-balancing.
+14:29:25:480  INFO 19004 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:29:25:540  INFO 19004 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2ControllerWebMvc#getDocumentation(String, HttpServletRequest)]
+14:29:27:330  INFO 19004 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:29:27:677  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 284cdb4d-f53e-428a-bb7e-cc116497a7a6
+14:29:27:802  INFO 19004 --- [main] org.reflections.Reflections              : Reflections took 57 ms to scan 1 urls, producing 3 keys and 6 values 
+14:29:27:853  INFO 19004 --- [main] org.reflections.Reflections              : Reflections took 21 ms to scan 1 urls, producing 4 keys and 9 values 
+14:29:27:879  INFO 19004 --- [main] org.reflections.Reflections              : Reflections took 20 ms to scan 1 urls, producing 3 keys and 10 values 
+14:29:27:884  WARN 19004 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+14:29:27:926  INFO 19004 --- [main] org.reflections.Reflections              : Reflections took 41 ms to scan 1 urls, producing 1 keys and 5 values 
+14:29:27:942  INFO 19004 --- [main] org.reflections.Reflections              : Reflections took 13 ms to scan 1 urls, producing 1 keys and 7 values 
+14:29:27:974  INFO 19004 --- [main] org.reflections.Reflections              : Reflections took 26 ms to scan 1 urls, producing 2 keys and 8 values 
+14:29:27:978  WARN 19004 --- [main] org.reflections.Reflections              : given scan urls are empty. set urls in the configuration
+14:29:27:980  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] RpcClient init label, labels = {module=naming, source=sdk}
+14:29:27:984  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+14:29:27:986  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+14:29:27:986  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+14:29:27:989  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Try to connect to server on start up, server: {serverIp = '192.168.202.128', server main port = 8848}
+14:29:30:497  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Success to connect to server [192.168.202.128:8848] on start up, connectionId = 1733898589457_192.168.202.1_2939
+14:29:30:498  INFO 19004 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Notify connected event to listeners.
+14:29:30:499  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+14:29:30:499  INFO 19004 --- [main] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$1014/0x000001c7d1be0880
+14:29:30:604  INFO 19004 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 7001 (http) with context path ''
+14:29:30:626  INFO 19004 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP cart-service 192.168.202.1:7001 register finished
+14:29:31:142  INFO 19004 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Receive server push request, request = NotifySubscriberRequest, requestId = 8
+14:29:31:149  INFO 19004 --- [nacos-grpc-client-executor-9] com.alibaba.nacos.common.remote.client   : [284cdb4d-f53e-428a-bb7e-cc116497a7a6] Ack server push request, request = NotifySubscriberRequest, requestId = 8
+14:29:32:277  INFO 19004 --- [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
+14:29:32:278  INFO 19004 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Documentation plugins bootstrapped
+14:29:32:283  INFO 19004 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+14:29:32:338  INFO 19004 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+14:29:32:537  INFO 19004 --- [main] com.hmall.cart.CartApplication           : Started CartApplication in 17.848 seconds (JVM running for 19.495)

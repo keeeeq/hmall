@@ -63,6 +63,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         order.setPaymentType(orderFormDTO.getPaymentType());
         order.setUserId(UserContext.getUser());
         order.setStatus(1);
+        order.setCreateTime(LocalDateTime.now());
         // 1.6.将Order写入数据库order表中
         save(order);
 
@@ -77,7 +78,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
         try {
             itemClient.deductStock(Collections.singletonList(detailDTOS));
         } catch (Exception e) {
-            throw new RuntimeException("库存不足！");
+            throw new RuntimeException("库存不足！456");
         }
         return order.getId();
     }

@@ -5,6 +5,7 @@ D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\m
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\utils\WebUtils.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\utils\BeanUtils.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\domain\R.java
+D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\interceptors\UserInfoInterceptor.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\utils\UserContext.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\exception\BizIllegalException.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\domain\PageQuery.java
@@ -13,6 +14,7 @@ D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\m
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\exception\BadRequestException.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\exception\CommonException.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\exception\UnauthorizedException.java
+D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\config\MvcConfig.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\utils\CookieBuilder.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\exception\ForbiddenException.java
 D:\1SpringCloud微服务—资料\day03-微服务01\资料\hmall\hm-common\src\main\java\com\hmall\common\utils\Convert.java
